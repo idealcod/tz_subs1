@@ -1,0 +1,4 @@
+database:
+  url: postgres://user:password@db:5432/subscriptions?sslmode=disable
+server:
+  port: "8080"
