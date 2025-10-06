@@ -313,7 +313,7 @@ func main() {
 		return nil
 	})
 
-	// Start server
+
 	go func() {
 		if err := e.Start(":" + cfg.Server.Port); err != nil && err != http.ErrServerClosed {
 			logger.Error("server error", "error", err)
@@ -321,7 +321,6 @@ func main() {
 		}
 	}()
 
-	// Graceful shutdown
 	quit := make(chan os.Signal, 1)
 	signal.Notify(quit, os.Interrupt, syscall.SIGTERM)
 	<-quit
